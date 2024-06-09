@@ -1,0 +1,61 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #24353f;
+}
+::selection{
+    background-color: blueviolet;
+    color: white;
+}
+.shadow-lg{
+    width: 60%;
+    padding-top:10px ;
+}
+
+h1,h2{
+   color: #17a2b8;
+
+}
+.btn{
+    color: #17a2b8;
+    width: 100%;
+    cursor: pointer;
+    border-radius: .25rem;
+    border: #17a2b8 2px solid; 
+}
+.btn:hover{
+    color: #fff;
+    background-color: #17a2b8;
+}
+.form-control {
+    background-color: #24353f;
+    color: #fff;
+    border: solid 2px #b4a9a9f5;
+}
+.form-control::placeholder {
+    color: #b4a9a9f5; 
+}
+.fa-eye-slash,
+.fa-eye{
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(-30%,-18%);
+    font-size: 18px;
+    color: #b4a9a9f5;
+    cursor: pointer;
+    padding: 5px;
+}
+.Sign-btn{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    text-decoration: none;
+}
+.hidden {
+    display: none;
+}
