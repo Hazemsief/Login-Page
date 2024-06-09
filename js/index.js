@@ -1,4 +1,4 @@
-// switch Login & signup
+//switching between login and signup
 document.getElementById('show-sign-up').addEventListener('click', function(e) {
     e.preventDefault();
     document.getElementById('sign-in-form').classList.add('hidden');
@@ -11,7 +11,7 @@ document.getElementById('show-sign-in').addEventListener('click', function(e) {
     document.getElementById('sign-in-form').classList.remove('hidden');
 });
 
-// check realtime validate
+// Check real-time validation
 var selectedInput = document.querySelectorAll('.selectedInput');
 console.log(selectedInput);
 
@@ -71,7 +71,7 @@ function checkEmailExists(email, callback) {
     });
 }
 
-// password-eye
+// Password eye toggle
 function togglePassword(inputId, eyeIconId, eyeSlashIconId) {
     const passwordInput = document.getElementById(inputId);
     const eyeIcon = document.getElementById(eyeIconId);
@@ -88,7 +88,7 @@ function togglePassword(inputId, eyeIconId, eyeSlashIconId) {
     }
 }
 
-// validate login
+// Validate login form
 function validateLoginForm() {
     const email = document.getElementById('loginEmail').value;
     const password = document.getElementById('loginPassword').value;
@@ -101,12 +101,16 @@ function validateLoginForm() {
         alert('Please enter a valid password.');
         return false;
     }
-    
+
+    const userName = "User"; 
+    localStorage.setItem('userEmail', email);
+    localStorage.setItem('userName', userName);
+
     window.location.href = 'home.html';
     return true;
 }
 
-// validate sign up
+// Validate sign-up form
 function validateSignUpForm() {
     const name = document.getElementById('regName').value;
     const email = document.getElementById('regEmail').value;
@@ -135,12 +139,13 @@ function validateSignUpForm() {
             alert('This email is already registered.');
             return false;
         } else {
-            alert('Sign up form is valid');
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userName', name);
+
+            window.location.href = 'home.html';
             return true;
         }
     });
 
-    window.location.href = 'home.html';
     return false; 
 }
-
